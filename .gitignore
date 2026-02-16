@@ -1,6 +1,16 @@
 # Compiled class file
 *.class
 
+### IntelliJ IDEA ###
+.idea/workspace.xml
+.idea/usage.statistics.xml
+.idea/tasks.xml
+.idea/shelf/
+.idea/dictionaries/
+.idea/httpRequests/
+.idea/vcs.xml
+.idea/copy.xml
+
 # Log file
 *.log
 
