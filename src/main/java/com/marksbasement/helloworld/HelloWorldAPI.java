@@ -2,7 +2,10 @@ package com.marksbasement.helloworld;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import io.swagger.v3.oas.annotations.tags.*;
+import io.swagger.v3.oas.annotations.Operation;
 
 /**
  * @author Mark Dyrhaug
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
  * This class is a simple endpoint class.
  */
 @RestController
+@Tag(name = "Echo Endpoints", description = "Operations that parrot back information.")
 public class  HelloWorldAPI {
 
     /**
@@ -22,6 +26,11 @@ public class  HelloWorldAPI {
      * This endpoint will return the string 'Hello World.
      * @return String Hello World
      */
+    @Operation(
+            summary = "Says hello to the world",
+            description = "This enpdoint was created to learn spring boot.",
+            tags = {"Learning", "Simple"}
+    )
     @GetMapping("/helloWorld")
     public String helloWorld() {
         if (LOG.isInfoEnabled()) {
